@@ -3,7 +3,11 @@
 
 int main()
 {
-    printf("Hello World!");
-    printf("")
+    printf("Hello World!\n");
+    printf("Hello World!\n");
+    printf("Hello World!\n");
+    printf("Hello World!\n");
+    printf("Hello World!\n");
+    printf("");
     return 0;
 }

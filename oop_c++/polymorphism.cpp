@@ -54,6 +54,9 @@ public:
             cout << Name << " You can not be promoted!" << endl;
         }
     }
+    void virtual Work() {
+        cout << Name << " is checking email, task backlog, performing tasks..." << endl;
+    }
 };
 
 class Developer:public Employee {
@@ -67,7 +70,9 @@ public:
     void FixBug() {
         cout << getName() << " fixed bug using " << FavProgrammingLanguage << endl;
     }
-
+    void Work() {
+        cout << Name << " is writing " << FavProgrammingLanguage << " code." << endl;
+    }
 };
 
 class Teacher:public Employee {
@@ -81,13 +86,18 @@ public:
     {
         Subject = subject;
     }
+    void Work() {
+        cout << Name << " is teaching " << Subject << "." << endl;
+    }
 };
 
 int main() {
     Developer d = Developer("Prakhar", "Youtube", 25, "C++");
-    d.FixBug();
-    d.AskForPromotion();
     Teacher t("Jack", "Cool School", 31, "CSs");
-    t.PreparedLesson();
-    t.AskForPromotion();
+
+    Employee* e1 = &d;
+    Employee* e2 = &t;
+
+    e1 -> Work();
+    e2 -> Work();
 }

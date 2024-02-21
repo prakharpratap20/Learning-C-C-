@@ -24,16 +24,16 @@ int main() {
         cout << h << ":" << m << ":" << s << endl;
         sleep(1);
         s++;
-        if (s > 59) {
+        if (s >= 59) {
             s = 0;
             m++;
         }
-        if (m > 59) {
+        if (m >= 59) {
             m = 0;
             h++;
-        }
-        if (h > 24) {
-            h = 0;
+            if (h >= 24) {
+                h = 0;
+            }
         }
     }
     return 0;
